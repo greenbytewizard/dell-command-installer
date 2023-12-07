@@ -24,6 +24,7 @@ function Install-DellUpdater {
 }
 
 # Function to run Dell Command Update app
+# HKLM:\... abbreviation refers to the "HKEY_LOCAL_MACHINE" hive in the Windows Registry. 
 function Run-DellUpdater {
     Write-Host "Disabling Dell automatic updates"
     New-Item -Path "HKLM:\SOFTWARE\Dell\UpdateService\Clients\CommandUpdate\Preferences\Settings\Schedule" -Force | Out-Null
